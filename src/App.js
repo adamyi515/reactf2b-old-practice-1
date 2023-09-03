@@ -2,10 +2,11 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 // Components
-import Header from './components/header/header.component';
+import Header from './components/header/Header';
 
 // Pages
-import HomePage from './pages/home-page.component';
+import Home from './pages/Home';
+import AddContact from './pages/AddContact';
 
 function App() {
   return (
@@ -14,7 +15,8 @@ function App() {
           <Header branding="Contact Manager" />
           <div className="container">
             <Routes>
-              <Route path='/' element={<HomePage />} />
+              <Route path='/' element={<Home />} />
+              <Route path='/contact/add' element={<AddContact />} />
             </Routes>
           </div>
         </div>
