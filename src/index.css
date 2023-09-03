@@ -1,0 +1,19 @@
+.contact-list {
+    margin-top: 20px;
+}
+
+.contact {
+    border: 1px solid black;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.contact-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.contact-body {
+    font-size: 16px;
+}
