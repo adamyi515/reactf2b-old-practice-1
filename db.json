@@ -1,7 +1,10 @@
 {
-    "contacts": [
-        { "id": 1, "name": "Adam", "email": "Adam@test.com", "phone": "123-1234"},
-        { "id": 2, "name": "Steve", "email": "Steve@test.com", "phone": "123-1234"},
-        { "id": 3, "name": "David", "email": "David@test.com", "phone": "123-1234"}
-    ]
+  "contacts": [
+    {
+      "id": "81b6d404-946e-45b2-bcea-8131c8c909ae",
+      "name": "Adam Yi",
+      "email": "adamyi@test.com",
+      "phone": "123-1234"
+    }
+  ]
 }

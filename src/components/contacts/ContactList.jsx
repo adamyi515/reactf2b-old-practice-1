@@ -14,6 +14,12 @@ const ContactList = () => {
     dispatch(getContacts())
   }, []);
 
+  if(contactUsers.length < 1){
+    return(
+      <h1>No Users in the database.</h1>
+    )
+  }
+
   return (
     <div className='contact-list'>
         {contactUsers.map(contact => {

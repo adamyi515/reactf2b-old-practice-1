@@ -8,7 +8,8 @@ const contactReducer = (state  = initialState, action) => {
     switch(action.type){
         case 'GET_CONTACTS':
             return {
-                ...state
+                ...state,
+                users: action.payload
             }
         case 'ADD_CONTACT':
             return {
