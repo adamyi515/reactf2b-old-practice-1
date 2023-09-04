@@ -1,4 +1,10 @@
-import React, { useState } from 'react'
+import React, { useState } from 'react';
+import { v4 as uuidv4 } from 'uuid';
+
+import { useDispatch } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
+
+import {addContact} from '../store/actions/contactActions.js';
 
 const AddContact = () => {
     const [formData, setFormData] = useState({
@@ -9,9 +15,27 @@ const AddContact = () => {
 
     const { name, email, phone } = formData;
 
+    const dispatch = useDispatch();
+    const navigate = useNavigate();
+
     // Event Handlers //////////////////////////////////////////////////////////////////////////////////////////////////////
     function handleSubmit(ev) {
         ev.preventDefault();
+
+        if(!name || !email || !phone){
+            window.alert('User my input all fields.');
+            return;
+        }
+
+        const newContact = {
+            id: uuidv4(),
+            name,
+            email,
+            phone
+        };
+
+        dispatch(addContact(newContact));
+        navigate('/');
     }
 
     function handleTextChange(ev) {
