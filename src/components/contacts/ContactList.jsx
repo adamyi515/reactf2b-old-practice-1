@@ -1,29 +1,24 @@
-import React from 'react'
+import React, { useEffect } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+import ContactItem from './ContactItem';
 
-const dummyData = [
-    { "id": 1, "name": "Adam", "email": "Adam@test.com", "phone": "123-1234"},
-    { "id": 2, "name": "Steve", "email": "Steve@test.com", "phone": "123-1234"},
-    { "id": 3, "name": "David", "email": "David@test.com", "phone": "123-1234"}
-]
+import { getContacts } from '../../store/actions/contactActions';
+
+
 
 const ContactList = () => {
+  const contactUsers = useSelector(state => state.contacts.users);
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(getContacts())
+  }, []);
+
   return (
     <div className='contact-list'>
-        {dummyData.map(contact => {
+        {contactUsers.map(contact => {
           return(
-            <div className='contact'>
-              <div className='contact-header'>
-                <h4>{ contact.name }</h4>
-                <div className='contact-buttons'>
-                  <button className='btn btn-light'>Edit</button>
-                  <button className='btn btn-light'>Delete</button>
-                </div>  
-              </div>
-              <div className='contact-body'>
-                <p>Email: { contact.email } </p>
-                <p>Phone: { contact.phone } </p>
-              </div>
-            </div>
+            <ContactItem key={contact.id} contact={contact} />
           )
         })}
     </div>
