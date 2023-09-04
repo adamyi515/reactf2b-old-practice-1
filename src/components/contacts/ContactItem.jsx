@@ -11,6 +11,7 @@ const ContactItem = ({ contact }) => {
         dispatch(deleteContact(id));
     }
 
+
     return (
         <div className='contact'>
             <div className='contact-header'>
